@@ -1,6 +1,6 @@
 services:
   web-site:
-    image: web-site:latest
+    build: web-site/
     container_name: web-site
     ports:
       - "80:8080"
