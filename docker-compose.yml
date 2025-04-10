@@ -1,6 +1,14 @@
 services:
-  web-site:
-    build: web-site/
-    container_name: web-site
+  web:
+    build: webapp/
+    container_name: webapp
+    expose:
+      - '8080'
+    
+  nginx:
+    build: nginx/
+    container_name: nginx
     ports:
-      - "80:8080"
+      - '80:80'
+    depends_on:
+      - web
